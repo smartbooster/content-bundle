@@ -1,0 +1,35 @@
+framework:
+    secret: 'we_do_test'
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_sqlite
+                path:     "%kernel.cache_dir%/test.db"
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        entity_managers:
+            default:
+                connection: default
+                mappings:
+                    Test:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'Smart\ContentBundle'
+                        alias: Test
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            timestampable: true
+
+fidry_alice_data_fixtures:
+    default_purge_mode: delete
+    db_drivers:
+        doctrine_orm: true
+        doctrine_mongodb_odm: false
+        doctrine_phpcr_odm: false
+        eloquent_orm: false

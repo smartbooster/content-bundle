@@ -1,0 +1,13 @@
+Smart\ContentBundle\Entity\Category:
+    category_{1..10}:
+        title:             <sentence(6, true)>
+        url:               <word(4, true)>
+        content:           <paragraph(8, true)>
+        description:       <paragraph(4, true)>
+        enabled:           true
+    category_disabled:
+        title:             disabled category
+        url:               disabled-category
+        content:           Disabled content
+        description:       Disabled description
+        enabled:           false

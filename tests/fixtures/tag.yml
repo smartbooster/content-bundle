@@ -1,0 +1,4 @@
+Smart\ContentBundle\Entity\Tag:
+    tag_{1..10}:
+        title:             <sentence(6, true)>
+        url:               <word(4, true)>

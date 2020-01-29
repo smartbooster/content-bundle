@@ -1,0 +1,26 @@
+Smart\ContentBundle\Entity\Post:
+    post_{1..10}:
+        title:             <sentence(6, true)>
+        url:               <word(4, true)>
+        content:           <paragraph(4, true)>
+        description:       <paragraph(4, true)>
+        enabled:           true
+        author:            '@author_*'
+        category:          '@category_*'
+        tags:              '3x @tag_*'
+    post_on_disabled_category:
+        title:             post on disabled category
+        url:               disabled-category
+        content:           Disabled content
+        description:       Disabled abstract
+        enabled:           true
+        author:            '@author_*'
+        category:          '@category_disabled'
+    post_disabled:
+        title:             disabled post
+        url:               disabled-post
+        content:           Disabled content
+        description:       Disabled abstract
+        enabled:           false
+        author:            '@author_*'
+        category:          '@category_*'
