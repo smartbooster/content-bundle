@@ -3,13 +3,15 @@
 namespace Smart\ContentBundle\Entity\Traits;
 
 use Doctrine\Orm\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-trait Nameable
+trait NameableTrait
 {
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     protected $name;
 

@@ -30,17 +30,21 @@ class SmartContentExtension extends Extension implements PrependExtensionInterfa
     {
         $container->prependExtensionConfig('sonata_admin', [
             'extensions' => [
+                'smart_content.admin.extension.nameable' => [
+                    'uses' => ['Smart\ContentBundle\Entity\Traits\NameableTrait'],
+                    'priority' => 100
+                ],
                 'smart_content.admin.extension.content' => [
                     'uses' => ['Smart\ContentBundle\Entity\Traits\ContentTrait'],
-                    'priority' => 1
+                    'priority' => 80
                 ],
                 'smart_content.admin.extension.image' => [
                     'uses' => ['Smart\ContentBundle\Entity\Traits\ImageTrait'],
-                    'priority' => 2
+                    'priority' => 60
                 ],
                 'smart_content.admin.extension.seo' => [
                     'uses' => ['Smart\ContentBundle\Entity\Traits\SeoTrait'],
-                    'priority' => 3
+                    'priority' => 40
                 ],
             ]
         ]);

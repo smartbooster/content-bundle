@@ -3,6 +3,7 @@
 namespace Smart\ContentBundle\Admin\Extension;
 
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
@@ -13,6 +14,23 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
  */
 class ContentExtension extends AbstractAdminExtension
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function configureDatagridFilters(DatagridMapper $datagrid)
+    {
+        $datagrid
+            ->add('title', null, [
+                'label' => 'form.label_title',
+                'show_filter' => true,
+            ])
+            ->add('enabled', null, [
+                'label' => 'form.label_enabled',
+                'show_filter' => true,
+            ])
+        ;
+    }
+    
     /**
      * {@inheritdoc}
      */

@@ -21,7 +21,6 @@ class AuthorAdmin extends AbstractAdmin
     {
         $list
             ->addIdentifier('id')
-            ->addIdentifier('name', null, ['label' => 'form.label_name'])
         ;
     }
 
@@ -33,7 +32,6 @@ class AuthorAdmin extends AbstractAdmin
         $form
             ->tab('tab.label_content')
                 ->with('fieldset.label_general')
-                    ->add('name')
                 ->end()
             ->end()
         ;
@@ -47,7 +45,6 @@ class AuthorAdmin extends AbstractAdmin
         $show
             ->tab('tab.label_content')
                 ->with('fieldset.label_general')
-                    ->add('name', null, ['label' => 'form.label_name'])
                 ->end()
             ->end()
         ;

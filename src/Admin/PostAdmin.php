@@ -3,8 +3,10 @@
 namespace Smart\ContentBundle\Admin;
 
 use Smart\SonataBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Form\Type\Filter\DateType;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\Form\Type\DatePickerType;
 
@@ -16,17 +18,42 @@ class PostAdmin extends AbstractAdmin
     /**
      * {@inheritdoc}
      */
+    public function configureDatagridFilters(DatagridMapper $datagrid)
+    {
+        $datagrid
+            ->add('author', null, [
+                'show_filter' => true,
+                'label' => 'form.label_author'
+            ])
+            ->add(
+                'publishedAt',
+                'doctrine_orm_date',
+                [
+                    'label' => 'form.label_published_at'
+                ],
+                DatePickerType::class,
+                [
+                    'format' => 'dd/MM/yyyy',
+                ]
+            )
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function configureListFields(ListMapper $list)
     {
 
         $list
             ->addIdentifier('id')
-            ->add('author')
-            ->add('category')
-            ->add('tags')
-            ->add('enabled')
+            ->add('author', null, ['label' => 'form.label_author'])
+            ->add('category', null, ['label' => 'form.label_category'])
+            ->add('tags', null, ['label' => 'form.label_tags'])
+            ->add('enabled', null, ['label' => 'form.label_enabled'])
             ->add('publishedAt', 'date', [
-                'format' => 'd/m/Y'
+                'format' => 'd/m/Y',
+                'label' => 'form.label_published_at'
             ])
         ;
     }

@@ -4,6 +4,7 @@ namespace Smart\ContentBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Smart\ContentBundle\Entity\Traits\NameableTrait;
 use Smart\ContentBundle\Entity\Traits\SeoTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -12,10 +13,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass="Smart\ContentBundle\Entity\Repository\TagRepository")
  * @ORM\Table(name="smart_content_tag")
  *
+ * @UniqueEntity({"name"})
  * @UniqueEntity({"url"})
  */
 class Tag
 {
+    use NameableTrait;
     use SeoTrait;
     
     /**
@@ -26,14 +29,6 @@ class Tag
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    protected $name;
 
     /**
      * @var ArrayCollection|Post[]
@@ -61,22 +56,6 @@ class Tag
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
     }
 
     /**

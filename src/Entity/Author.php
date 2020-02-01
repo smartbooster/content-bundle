@@ -6,12 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Smart\ContentBundle\Entity\Traits\ContentTrait;
 use Smart\ContentBundle\Entity\Traits\ImageTrait;
-use Smart\ContentBundle\Entity\Traits\Nameable;
+use Smart\ContentBundle\Entity\Traits\NameableTrait;
 use Smart\ContentBundle\Entity\Traits\SeoTrait;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Nicolas Bastien <nicolas.bastien@smartbooster.io>
@@ -20,10 +21,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="smart_content_author")
  *
  * @Vich\Uploadable
+ * @UniqueEntity({"name"})
+ * @UniqueEntity({"url"})
  */
 class Author
 {
-    use Nameable;
+    use NameableTrait;
     use ImageTrait;
     use ContentTrait;
     use SeoTrait;

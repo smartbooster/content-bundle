@@ -1,6 +1,7 @@
 Smart\ContentBundle\Entity\Author:
     author_{1..10}:
         name (unique):     '<firstName()> <lastName()>'
+        url:               <word(4, true)>
         title:             <word(4, true)>
         description:       <paragraph(4, true)>
         content:           <paragraph(8, true)>
