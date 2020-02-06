@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="smart_content.admin.extension.nameable" class="Smart\ContentBundle\Admin\Extension\NameableExtension" />
+        <service id="smart_content.admin.extension.content" class="Smart\ContentBundle\Admin\Extension\ContentExtension" />
+        <service id="smart_content.admin.extension.image" class="Smart\ContentBundle\Admin\Extension\ImageExtension" />
+        <service id="smart_content.admin.extension.seo" class="Smart\ContentBundle\Admin\Extension\SeoExtension" />
+
+        <service id="smart_content.admin.author" class="Smart\ContentBundle\Admin\AuthorAdmin">
+            <argument/>
+            <argument>Smart\ContentBundle\Entity\Author</argument>
+            <argument/>
+            <tag name="sonata.admin" manager_type="orm" label="admin.label_author"/>
+        </service>
+        <service id="smart_content.admin.category" class="Smart\ContentBundle\Admin\CategoryAdmin">
+            <argument/>
+            <argument>Smart\ContentBundle\Entity\Category</argument>
+            <argument/>
+            <tag name="sonata.admin" manager_type="orm" label="admin.label_category"/>
+        </service>
+        <service id="smart_content.admin.tag" class="Smart\ContentBundle\Admin\TagAdmin">
+            <argument/>
+            <argument>Smart\ContentBundle\Entity\Tag</argument>
+            <argument/>
+            <tag name="sonata.admin" manager_type="orm" label="admin.label_tag"/>
+        </service>
+        <service id="smart_content.admin.post" class="Smart\ContentBundle\Admin\PostAdmin">
+            <argument/>
+            <argument>Smart\ContentBundle\Entity\Post</argument>
+            <argument/>
+            <tag name="sonata.admin" manager_type="orm" label="admin.label_post"/>
+        </service>
+    </services>
+</container>

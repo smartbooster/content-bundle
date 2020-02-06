@@ -1,0 +1,23 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{% macro renderImage(object, fieldName) %}
+    {% set src = vich_uploader_asset(object, fieldName) %}
+    <img src="{{ src is not empty ? src|imagine_filter('smart_content_show_thumb') : '' }}" alt="{{ object }}" class="img-thumbnail"/><br/>
+{% endmacro %}
+
+{% import _self as macro %}
+
+{% set fieldName = field_description.options.fieldName is defined ? field_description.options.fieldName : 'imageFile' %}
+{% block field%}
+    <div>
+        {% if value is defined and value is iterable %}
+            {# Doctrine collection #}
+            {% for element in value %}
+                {{ macro.renderImage(element, fieldName) }}
+            {% endfor %}
+        {% else %}
+            {# Single item #}
+            {{ macro.renderImage(object, fieldName) }}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends admin.getTemplate('base_list_field') %}
+
+{% block field %}
+    {% if object.hasImage %}
+        <img src="{{ vich_uploader_asset(object, 'imageFile')|imagine_filter('smart_content_list_thumb') }}" alt="{{ object }}" class="img-thumbnail"/>
+    {% endif %}
+{% endblock %}

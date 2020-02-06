@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="SonataAdminBundle.en.xliff" >
+        <body>
+            <trans-unit id="dashboard_group.label_content">
+                <source>dashboard_group.label_content</source>
+                <target>Contenus</target>
+            </trans-unit>
+            <trans-unit id="admin.label_author">
+                <source>admin.label_author</source>
+                <target>Auteurs</target>
+            </trans-unit>
+            <trans-unit id="admin.label_category">
+                <source>admin.label_category</source>
+                <target>Catégories</target>
+            </trans-unit>
+            <trans-unit id="admin.label_tag">
+                <source>admin.label_tag</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="admin.label_post">
+                <source>admin.label_post</source>
+                <target>Posts</target>
+            </trans-unit>
+            <trans-unit id="admin.label_media">
+                <source>admin.label_media</source>
+                <target>Médias</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_author_list">
+                <source>breadcrumb.link_author_list</source>
+                <target>Auteurs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_author_create">
+                <source>breadcrumb.link_author_create</source>
+                <target>Nouvel auteur</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_author_delete">
+                <source>breadcrumb.link_author_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_category_list">
+                <source>breadcrumb.link_category_list</source>
+                <target>Catégories</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_category_create">
+                <source>breadcrumb.link_category_create</source>
+                <target>Nouvelle catégorie</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_category_delete">
+                <source>breadcrumb.link_category_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_tag_list">
+                <source>breadcrumb.link_tag_list</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_tag_create">
+                <source>breadcrumb.link_tag_create</source>
+                <target>Nouveau tag</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_tag_delete">
+                <source>breadcrumb.link_tag_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_media_list">
+                <source>breadcrumb.link_media_list</source>
+                <target>Médias</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_media_create">
+                <source>breadcrumb.link_media_create</source>
+                <target>Nouveau média</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_media_delete">
+                <source>breadcrumb.link_media_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_post_list">
+                <source>breadcrumb.link_post_list</source>
+                <target>Posts</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_post_create">
+                <source>breadcrumb.link_post_create</source>
+                <target>Nouveau post</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_post_delete">
+                <source>breadcrumb.link_post_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="tab.label_content">
+                <source>tab.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="tab.label_seo">
+                <source>tab.label_seo</source>
+                <target>SEO</target>
+            </trans-unit>
+            <trans-unit id="fieldset.label_general">
+                <source>fieldset.label_general</source>
+                <target>Général</target>
+            </trans-unit>
+            <trans-unit id="fieldset.label_parameters">
+                <source>fieldset.label_parameters</source>
+                <target>Paramètres</target>
+            </trans-unit>
+            <trans-unit id="fieldset.label_seo">
+                <source>fieldset.label_seo</source>
+                <target>SEO</target>
+            </trans-unit>
+            <trans-unit id="fieldset.label_metadata">
+                <source>fieldset.label_metadata</source>
+                <target>Metadata</target>
+            </trans-unit>
+            <trans-unit id="fieldset.label_routing">
+                <source>fieldset.label_routing</source>
+                <target>Routing</target>
+            </trans-unit>
+            <trans-unit id="form.label_name">
+                <source>form.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="form.label_title">
+                <source>form.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="form.label_description">
+                <source>form.label_description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="form.label_content">
+                <source>form.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="form.label_image">
+                <source>form.label_image</source>
+                <target>Image</target>
+            </trans-unit>
+            <trans-unit id="form.label_url">
+                <source>form.label_url</source>
+                <target>Url</target>
+            </trans-unit>
+            <trans-unit id="form.label_custom_meta_tags">
+                <source>form.label_custom_meta_tags</source>
+                <target>Metatags</target>
+            </trans-unit>
+            <trans-unit id="form.label_seo_description">
+                <source>form.label_seo_description</source>
+                <target>Description SEO</target>
+            </trans-unit>
+            <trans-unit id="form.label_author">
+                <source>form.label_author</source>
+                <target>Auteur</target>
+            </trans-unit>
+            <trans-unit id="form.label_category">
+                <source>form.label_category</source>
+                <target>Catégorie</target>
+            </trans-unit>
+            <trans-unit id="form.label_tags">
+                <source>form.label_tags</source>
+                <target>Tags</target>
+            </trans-unit>
+            <trans-unit id="form.label_published_at">
+                <source>form.label_published_at</source>
+                <target>Date de publication</target>
+            </trans-unit>
+            <trans-unit id="url.help">
+                <source>url.help</source>
+                <target><![CDATA[
+                    Laisser ce champ vide si vous souhaitez que l'url soit générer à partir du titre de la page.
+                ]]></target>
+            </trans-unit>
+            <trans-unit id="custom_metatags.help">
+                <source>custom_metatags.help</source>
+                <target><![CDATA[
+                    Tags HTML qui seront dans le header de votre page.<br/>
+                    Format : < meta name="customName" content="your custom content here" / >
+                ]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
