@@ -114,6 +114,10 @@
                 <source>fieldset.label_routing</source>
                 <target>Routing</target>
             </trans-unit>
+            <trans-unit id="fieldset.label_preview">
+                <source>fieldset.label_preview</source>
+                <target>Aperçu</target>
+            </trans-unit>
             <trans-unit id="form.label_name">
                 <source>form.label_name</source>
                 <target>Nom</target>
@@ -130,9 +134,17 @@
                 <source>form.label_content</source>
                 <target>Contenu</target>
             </trans-unit>
+            <trans-unit id="form.label_enabled">
+                <source>form.label_enabled</source>
+                <target>Actif</target>
+            </trans-unit>
             <trans-unit id="form.label_image">
                 <source>form.label_image</source>
                 <target>Image</target>
+            </trans-unit>
+            <trans-unit id="form.label_formats">
+                <source>form.label_formats</source>
+                <target>Formats</target>
             </trans-unit>
             <trans-unit id="form.label_url">
                 <source>form.label_url</source>

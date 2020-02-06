@@ -44,7 +44,6 @@ class PostAdmin extends AbstractAdmin
      */
     public function configureListFields(ListMapper $list)
     {
-
         $list
             ->addIdentifier('id')
             ->add('author', null, ['label' => 'form.label_author'])
@@ -77,7 +76,6 @@ class PostAdmin extends AbstractAdmin
                     ->add('tags')
                 ->end()
             ->end()
-
         ;
     }
 

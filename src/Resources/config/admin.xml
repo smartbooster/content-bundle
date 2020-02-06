@@ -33,5 +33,11 @@
             <argument/>
             <tag name="sonata.admin" manager_type="orm" label="admin.label_post"/>
         </service>
+        <service id="smart_content.admin.media" class="Smart\ContentBundle\Admin\MediaAdmin">
+            <argument/>
+            <argument>Smart\ContentBundle\Entity\Media</argument>
+            <argument/>
+            <tag name="sonata.admin" manager_type="orm" label="admin.label_media"/>
+        </service>
     </services>
 </container>

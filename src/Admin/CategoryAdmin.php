@@ -16,7 +16,6 @@ class CategoryAdmin extends AbstractAdmin
      */
     public function configureListFields(ListMapper $list)
     {
-
         $list
             ->addIdentifier('id')
         ;
@@ -30,7 +29,6 @@ class CategoryAdmin extends AbstractAdmin
         $form
             ->tab('tab.label_content')
                 ->with('fieldset.label_general', ['class' => 'col-md-8'])
-                
                 ->end()
             ->end()
         ;

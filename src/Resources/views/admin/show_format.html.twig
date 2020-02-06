@@ -1,0 +1,20 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{% block field%}
+    {% if field_description.options.formats is defined %}
+        {% set fieldName = field_description.options.fieldName is defined ? field_description.options.fieldName : 'imageFile' %}
+        {% for format in field_description.options.formats %}
+            <div>
+                <b>{{ format }}</b><br/>
+                {% set src = vich_uploader_asset(object, fieldName) %}
+                <img src="{{ src is not empty ? src|imagine_filter(format) : '' }}" alt="{{ object }}" class="img-thumbnail"/><br/>
+                <a href="{{ src is not empty ? src|imagine_filter(format)|replace({'admin.': ''}) : '' }}" target="_blank" class="smart-media-link">
+                    {{ src is not empty ? src|imagine_filter(format)|replace({'admin.': ''}) : '' }}
+                </a>
+            </div>
+            <hr/>
+        {% endfor %}
+    {% else %}
+        <p>You should define a list of formats in your Admin class.</p>
+    {% endif %}
+{% endblock %}
