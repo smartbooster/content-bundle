@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="smart_content.repository.post" class="Smart\ContentBundle\Entity\Repository\PostRepository">
+            <factory service="doctrine.orm.default_entity_manager" method="getRepository"/>
+            <argument>Smart\ContentBundle\Entity\Post</argument>
+        </service>
+        <service id="smart_content.repository.category" class="Smart\ContentBundle\Entity\Repository\CategoryRepository">
+            <factory service="doctrine.orm.default_entity_manager" method="getRepository"/>
+            <argument>Smart\ContentBundle\Entity\Category</argument>
+        </service>
+        <service id="smart_content.repository.tag" class="Smart\ContentBundle\Entity\Repository\TagRepository">
+            <factory service="doctrine.orm.default_entity_manager" method="getRepository"/>
+            <argument>Smart\ContentBundle\Entity\Tag</argument>
+        </service>
+        <service id="smart_content.repository.page" class="Smart\ContentBundle\Entity\Repository\PageRepository">
+            <factory service="doctrine.orm.default_entity_manager" method="getRepository"/>
+            <argument>Smart\ContentBundle\Entity\Page</argument>
+        </service>
+    </services>
+
+</container>

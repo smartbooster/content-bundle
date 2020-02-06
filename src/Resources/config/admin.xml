@@ -39,5 +39,12 @@
             <argument/>
             <tag name="sonata.admin" manager_type="orm" label="admin.label_media"/>
         </service>
+
+        <service id="smart_content.block.admin.recent_posts" class="Smart\ContentBundle\Admin\Block\RecentPostBlock">
+            <argument>smart_content.block.admin.recent_posts</argument>
+            <argument type="service" id="sonata.templating" />
+            <argument type="service" id="smart_content.repository.post" />
+            <tag name="sonata.block"/>
+        </service>
     </services>
 </container>

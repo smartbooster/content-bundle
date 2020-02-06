@@ -6,6 +6,14 @@
                 <source>dashboard_group.label_content</source>
                 <target>Contenus</target>
             </trans-unit>
+            <trans-unit id="dashboard.block.recent_posts.title">
+                <source>dashboard.block.recent_posts.title</source>
+                <target>Derniers posts</target>
+            </trans-unit>
+            <trans-unit id="dashboard.block.recent_posts.none">
+                <source>dashboard.block.recent_posts.none</source>
+                <target>Vous n'avez encore publié aucun post.</target>
+            </trans-unit>
             <trans-unit id="admin.label_author">
                 <source>admin.label_author</source>
                 <target>Auteurs</target>

@@ -21,6 +21,7 @@ class SmartContentExtension extends Extension implements PrependExtensionInterfa
         $loader = new XmlFileLoader($container, new FileLocator(sprintf('%s/../Resources/config', __DIR__)));
         $loader->load('admin.xml');
         $loader->load('service.xml');
+        $loader->load('repository.xml');
     }
 
     /**
