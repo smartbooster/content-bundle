@@ -86,9 +86,9 @@ class Post
     {
         return $this->id;
     }
-    
+
     /**
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getPublishedAt()
     {

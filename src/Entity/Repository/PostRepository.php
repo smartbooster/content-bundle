@@ -12,6 +12,9 @@ use Smart\ContentBundle\Entity\Tag;
  */
 class PostRepository extends EntityRepository
 {
+    const DIRECTION_PREVIOUS = 'previous';
+    const DIRECTION_NEXT = 'next';
+
     /**
      * @return \DateTime|null
      */
@@ -68,5 +71,77 @@ class PostRepository extends EntityRepository
         }
 
         return null;
+    }
+
+    /**
+     * @param Post|null $post
+     * @param Category|null $category
+     * @param Tag|null $tag
+     *
+     * @return Post|null
+     */
+    public function getPreviousPost(Post $post = null, $category = null, $tag = null)
+    {
+        return $this->getClosestPost($post, 'previous', $category, $tag);
+    }
+
+    /**
+     * @param Post|null $post
+     * @param Category|null $category
+     * @param Tag|null $tag
+     *
+     * @return Post|null
+     */
+    public function getNextPost(Post $post = null, $category = null, $tag = null)
+    {
+        return $this->getClosestPost($post, 'next', $category, $tag);
+    }
+
+    /**
+     * @param Post|null $post
+     * @param string $direction
+     * @param Category|null $category
+     * @param Tag|null $tag
+     *
+     * @return Post|null
+     */
+    protected function getClosestPost(Post $post = null, $direction = 'next', $category = null, $tag = null)
+    {
+        if (null === $post || null === $post->getPublishedAt()) {
+            return null;
+        }
+
+        $queryBuilder = $this->createQueryBuilder('p');
+
+        if ($direction === 'next') {
+            $queryBuilder
+                ->andWhere('p.publishedAt < :date')
+                ->orderBy('p.publishedAt', 'DESC');
+        } else {
+            $queryBuilder
+                ->andWhere('p.publishedAt >= :date')
+                ->orderBy('p.publishedAt', 'ASC');
+        }
+
+        if ($category !== null) {
+            $queryBuilder
+                ->andWhere('p.category = :category')
+                ->setParameter(':category', $category);
+        }
+        if ($tag !== null) {
+            $queryBuilder
+                ->leftJoin('p.tags', 't')
+                ->andWhere('t.id = :tag')
+                ->setParameter(':tag', $tag);
+        }
+
+        return $queryBuilder
+            ->setParameter(':date', $post->getPublishedAt())
+            ->andWhere('p.publishedAt IS NOT NULL')
+            ->andWhere('p.enabled = 1')
+            ->andWhere('p.id != ' . $post->getId())
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
     }
 }
