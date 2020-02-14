@@ -80,7 +80,15 @@ class Post
     }
 
     /**
-     * @return \DateTime
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return \DateTime|null
      */
     public function getPublishedAt()
     {
